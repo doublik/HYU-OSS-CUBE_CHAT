@@ -39,6 +39,10 @@ h2{
     color: #575ed8;
 }
 
+#output em{
+    color: #660099;
+}
+
 label{
     box-sizing: border-box;
     display: block;
