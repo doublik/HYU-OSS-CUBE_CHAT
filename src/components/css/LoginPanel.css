@@ -32,7 +32,7 @@
 }
 
 .input-color:focus {
-    border-color: #7289da;
+    border-color: #000;
 }
 
 .div-text {
@@ -83,7 +83,8 @@
 }
 
 .button-color:hover {
-    background-color: #677bc4;
+    color:black;
+    background-color: rgba(0, 89, 167, 0.5);
 }
 
 .button-color:active {
