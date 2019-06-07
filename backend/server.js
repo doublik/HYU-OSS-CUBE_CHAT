@@ -41,7 +41,9 @@ var user_list = []
 
 io.on('connection', (socket) => {
   const user_id = socket.handshake.query.user_id;
-  user_list.push(user_id)
+  if(user_list.indexOf(user_id) === -1) {
+    user_list.push(user_id)
+  }
   io.emit('NEW_USER', {"user_list": user_list, "user_id": user_id});
 
   socket.on('SEND_MESSAGE', (data) => {
