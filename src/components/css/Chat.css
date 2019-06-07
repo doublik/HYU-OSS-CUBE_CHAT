@@ -11,6 +11,7 @@
     border-left: 1px solid white;
     border-right: 1px solid white;
     background-color: rgb(57, 129, 239);
+    cursor: pointer;
 }
 
 .space-container {
