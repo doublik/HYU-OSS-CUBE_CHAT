@@ -114,7 +114,7 @@ class Chat extends React.Component {
       <div className="room-container">
         <div className="room-header">
           <div>CUBE CHAT</div>
-          <div onClick={ refreshPage }>EXIT</div>
+          <div className="exit" onClick={ refreshPage }>EXIT</div>
         </div>
         <div className="room-body">
           <div className="chat-container">

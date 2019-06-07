@@ -165,6 +165,14 @@
     box-shadow: none;
 }
 
+.exit {
+    cursor: pointer;
+}
+
+.exit:hover {
+    text-decoration: underline;
+}
+
 .message-alert {
     display: flex;
     flex-direction: column;
