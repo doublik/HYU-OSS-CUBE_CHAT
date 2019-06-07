@@ -13,8 +13,8 @@ var sql = "CREATE TABLE IF NOT EXISTS user (user_id VARCHAR(50), user_pw VARCHAR
 db.query(sql);
 sql = "CREATE TABLE IF NOT EXISTS log (id int AUTO_INCREMENT, user_id VARCHAR(50), content VARCHAR(255), time VARCHAR(10), PRIMARY KEY(id))";
 db.query(sql);
-// // sql = "INSERT INTO user (user_id, user_pw) VALUES('root', 'root')"
-// // db.query(sql);
+sql = "INSERT IGNORE INTO user (user_id, user_pw) VALUES('root', 'root')"
+db.query(sql);
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -48,17 +48,20 @@ io.on('connection', (socket) => {
 
   socket.on('SEND_MESSAGE', (data) => {
     const time = new Date();
+    var isRoot = false;
     if(data.user_id.length < 50 && data.content.length < 255) {
-      if (data.content.substring(0, 14) === '/reset_message'){
+      if (data.user_id === 'root') isRoot = true;
+      if (isRoot && data.content.substring(0, 14) === '/reset_message'){
         db.query("DELETE FROM log")
         return
       }
-      if (data.content.substring(0, 11) === '/reset_user'){
-        db.query("DELETE FROM user")
+      if (isRoot && data.content.substring(0, 11) === '/reset_user'){
+        db.query("DELETE FROM user WHERE user_id != 'root'")
         return
       }
-      if (data.content.substring(0, 9) === '/reset_all'){
-        db.query("DELETE FROM user, log")
+      if (isRoot && data.content.substring(0, 10) === '/reset_all'){
+        db.query("DELETE FROM user WHERE user_id != 'root'")
+        db.query("DELETE FROM log")
         return
       }
       db.query("INSERT INTO log(user_id, content, time) VALUES (?,?,?)", [data.user_id, data.content, time.getHours()+':'+time.getMinutes()])
