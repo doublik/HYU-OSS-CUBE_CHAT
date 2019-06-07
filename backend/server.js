@@ -6,35 +6,13 @@ var port = process.env.PORT || 8080
 
 var db = require('./db');
 
-db.connect( (err) => {
-  if (err) throw err;
-  console.log("Connected!");
-  db.query("CREATE DATABASE IF NOT EXISTS chat", (err, result) => {
-  if (err) throw err;
-  console.log("Database created");
-  db.query("USE chat", (err, result) => {if (err) throw err})
-  db.query("CREATE TABLE IF NOT EXISTS log" +
-            "(id int AUTO_INCREMENT, user_id VARCHAR(50)," +
-            "content VARCHAR(255), time VARCHAR(10)," +
-            "PRIMARY KEY(id))", (err, result) => {
-      if (err) throw err;
-      console.log("Table 'log' created");
-    });
-  db.query("CREATE TABLE IF NOT EXISTS user (user_id VARCHAR(50)," +
-          " user_pw VARCHAR(50), PRIMARY KEY(user_id))", (err, result) => {
-              if (err) throw err;
-              console.log("Table 'user' created");
-    });
-  });
-});
-
-// db.connect();
-// db.query("CREATE DATABASE IF NOT EXISTS chat");
-// db.query("USE chat");
-// var sql = "CREATE TABLE IF NOT EXISTS user (user_id VARCHAR(50), user_pw VARCHAR(50), PRIMARY KEY(user_id))";
-// db.query(sql);
-// sql = "CREATE TABLE IF NOT EXISTS log (id int AUTO_INCREMENT, user_id VARCHAR(50), content VARCHAR(255), time VARCHAR(10), PRIMARY KEY(id))";
-// db.query(sql);
+db.connect();
+db.query("CREATE DATABASE IF NOT EXISTS chat");
+db.query("USE chat");
+var sql = "CREATE TABLE IF NOT EXISTS user (user_id VARCHAR(50), user_pw VARCHAR(50), PRIMARY KEY(user_id))";
+db.query(sql);
+sql = "CREATE TABLE IF NOT EXISTS log (id int AUTO_INCREMENT, user_id VARCHAR(50), content VARCHAR(255), time VARCHAR(10), PRIMARY KEY(id))";
+db.query(sql);
 // // sql = "INSERT INTO user (user_id, user_pw) VALUES('root', 'root')"
 // // db.query(sql);
 
