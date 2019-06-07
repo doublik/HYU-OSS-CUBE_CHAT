@@ -66,8 +66,8 @@
 
 .button-color {
     height: 44px;
-    color: #000;
-    background-color: #FFFDE4;
+    color: #FFFDE4;
+    background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
     font-size: 16px;
     line-height: 24px;
@@ -99,7 +99,7 @@
     width: 100vw;
     height: 100vh;
     background: url(/background5.png);
-    background-size: 100%;
+    background-size: 107%;
     display: flex;
     align-items: center;
     justify-content: center;
