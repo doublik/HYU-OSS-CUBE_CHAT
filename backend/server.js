@@ -12,7 +12,7 @@ db.connect( (err) => {
   db.query("CREATE DATABASE IF NOT EXISTS chat", (err, result) => {
   if (err) throw err;
   console.log("Database created");
-  db.query("USE mychat", (err, result) => {if (err) throw err})
+  db.query("USE chat", (err, result) => {if (err) throw err})
   db.query("CREATE TABLE IF NOT EXISTS log" +
             "(id int AUTO_INCREMENT, user_id VARCHAR(50)," +
             "content VARCHAR(255), time VARCHAR(10)," +
