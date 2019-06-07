@@ -4,7 +4,7 @@
     align-items: center;
     width: 480px;
     padding: 40px;
-    background-color: #36393f;
+    background-color: rgba(0, 89, 167, 0.5);
     border-radius: 5px;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
     color: #72767d;
@@ -21,8 +21,8 @@
 
 .input-color {
     width: 100%;
-    color: #f6f6f7;
-    background-color: rgba(0,0,0,.1);
+    color: #000;
+    background-color: #FFFDE4;
     border: 1px solid rgba(0,0,0,.3);
     border-radius: 3px;
     padding: 10px;
@@ -38,12 +38,12 @@
 .div-text {
     font-size: 12px;
     margin-bottom : 8px;
-    color: #b9bbbe;
+    color: #000000;
     letter-spacing: .5px;
 }
 
 .div-title {
-    color : white;
+    color : #000000;
     font-size: 26px;
     line-height: 32px;
     margin-bottom: 8px;
@@ -52,7 +52,7 @@
 
 .div-change {
     position: relative;
-    color: #7289da;
+    color: #ff0000;
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
@@ -66,12 +66,12 @@
 
 .button-color {
     height: 44px;
-    color: #fff;
-    background-color: #7289da;
+    color: #000;
+    background-color: #FFFDE4;
     cursor: pointer;
     font-size: 16px;
     line-height: 24px;
-    margin-top: 4px;
+    margin-top: 6px;
     border: none;
     font-weight: 500;
     border-radius: 3px;
@@ -90,12 +90,6 @@
     background-color: #5b6eae;
 }
 
-.input-color {
-    background-color: rgb(48,51,57);
-    border-color: rgb(34,36,40);
-    color : white;
-}
-
 .margin {
     width: 30px;
     height: 200px;
@@ -105,6 +99,7 @@
     width: 100vw;
     height: 100vh;
     background: url(/background5.png);
+    background-size: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
