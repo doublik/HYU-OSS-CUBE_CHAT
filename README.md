@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+에리카 2019 오프소스 소프트웨어 개발 과정
 
-## Available Scripts
+10조 팀 프로젝트 Cubechat 입니다.
 
-In the project directory, you can run:
+## Cubechat
 
-### `npm start`
+Cubechat은 Node.js, React, `Express, Socket.io, 모듈과 Mysql 데이터베이스를 사용해 만든 채팅 애플리케이션입니다.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 설치전에 확인 하실 것
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+이 프로그램은 common 패키지의 경우 mysql-client, mysql-server (5.5.0 이상), nodejs(12.0.0 이상),
+client 패키지의 경우 nodejs(12.0.0 이상)이 필요합니다.
 
-### `npm test`
+시스템에 없는 프로그램은 패키지를 설치하면서 자동으로 함께 설치가 됩니다. 다만 nodejs의 경우 데비안 에 기본으로 제공되는 패키지 저장소에선 4.8.2 까지만 구할 수 있으므로
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `apt-cache madison nodejs`
 
-### `npm run build`
+커맨드를 실행해서 맞는 버전의 nodejs를 다운 가능한지 확인해주세요.
+nodejs 12 버전이 나타나지 않을 경우
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `wget https://deb.nodesource.com/setup_12.x -P /tmp/ ; bash /tmp/setup_12.x`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+커맨드를 실행해서 해당 저장소를 추가해 주시면 됩니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 설치하는 법
 
-### `npm run eject`
+**(모든 설치 작업이 그렇듯이 아래의 과정은 루트 권한을 필요로 합니다.)**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### cubechat-common : 
+`wget https://github.com/doublik/HYU-OSS-CUBE_CHAT/raw/master/packages/cubechat_1.0-common.deb -P /tmp/`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### cubechat-client :
+`wget https://github.com/doublik/HYU-OSS-CUBE_CHAT/raw/master/packages/cubechat_1.0-client.deb -P /tmp/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+커맨드를 입력하고 다운로드 후,
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `chmod 755 /tmp/[패키지 이름.deb]`
 
-## Learn More
+커맨드를 실행해서 실행가능한 파일로 만들어주세요. 그리고
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `apt install /tmp/[패키지 이름.deb]`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+를 실행해주면 됩니다.
