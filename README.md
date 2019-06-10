@@ -4,7 +4,7 @@
 
 ##Cubechat
 
-Cubechat은 Node.js, React, `Express, Socket.io, 
+Cubechat은 Node.js, React, `Express, Socket.io, 모듈과 Mysql 데이터베이스를 사용해 만든 채팅 애플리케이션입니다.
 
 ## 설치전에 확인 하실 것
 
