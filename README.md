@@ -26,10 +26,10 @@ nodejs 12 버전이 나타나지 않을 경우
 
 **(모든 설치 작업이 그렇듯이 아래의 과정은 루트 권한을 필요로 합니다.)**
 
-###cubechat-common : 
+### cubechat-common : 
 `wget https://github.com/doublik/HYU-OSS-CUBE_CHAT/raw/master/packages/cubechat_1.0-common.deb -P /tmp/`
 
-###cubechat-client :
+### cubechat-client :
 `wget https://github.com/doublik/HYU-OSS-CUBE_CHAT/raw/master/packages/cubechat_1.0-client.deb -P /tmp/`
 
 커맨드를 입력하고 다운로드 후,
